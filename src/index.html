@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DB8 Debate Client</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+
+  <body>
+    <h1>Two-agent Debate</h1>
+    <div class="col">
+      <div class="panel">
+        <h3>Agent A system</h3>
+        <textarea id="systemA">
+You are Agent A; respond as Agent A, do not include tags.
+You are an experienced debater.
+Argue concisely and directly, in no more than 400 words.
+Use progressive arguments.
+In your reasoning you will not repeat previously made arguments
+but you will build on the reasoning of Agent B.
+The first statement will be provided by the debate moderator,
+tagged with a "[Moderator]" prefix, which is the central point of the debate
+that you will defend.
+        </textarea>
+      </div>
+      <div class="panel">
+        <h3>Agent B system</h3>
+        <textarea id="systemB">
+You are Agent B; respond as Agent B, do not include tags.
+You are an experienced debater.
+Counterpoint Agent A respectfully, in no more than 400 words.
+Use conservative arguments.
+In your reasoning you will not repeat previously made arguments
+but you will build on the reasoning of Agent A.
+The first statement will be provided by the debate moderator,
+tagged with a "[Moderator]" prefix, which is the central point of the debate
+that you will oppose.
+        </textarea>
+      </div>
+    </div>
+
+    <p>
+      <label
+        >Starting user prompt:<br />
+        <input
+          id="startPrompt"
+          style="width: 100%"
+          value="All drugs should be legal."
+        />
+      </label>
+    </p>
+
+    <p>
+      <button id="startBtn">
+        Create instances and start debate (4 rounds)
+      </button>
+    </p>
+
+    <h2>Result</h2>
+    <div id="transcript">(no messages yet)</div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
